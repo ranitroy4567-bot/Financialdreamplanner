@@ -1,0 +1,17 @@
+# Web Framework & Server API
+fastapi
+uvicorn
+pydantic
+
+# Machine Learning & Data Processing
+scikit-learn
+pandas
+numpy
+joblib
+
+# RAG & Local AI Components
+langchain
+langchain-community
+langchain-text-splitters
+chromadb
+sentence-transformers
