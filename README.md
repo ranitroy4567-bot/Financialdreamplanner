@@ -77,5 +77,5 @@ $$\text{EMI} = P \times r \times \frac{(1 + r)^n}{(1 + r)^n - 1}$$
 
 1. **Clone the repository**:
    ```bash
-   git clone [https://github.com/your-username/financial-dream-planner.git](https://github.com/your-username/financial-dream-planner.git)
-   cd financial-dream-planner
+ git clone [https://github.com/ranitroy4567-bot/Financialdreamplanner.git](https://github.com/ranitroy4567-bot/Financialdreamplanner.git)
+   cd Financialdreamplanner
