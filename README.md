@@ -31,6 +31,51 @@ By evaluating location, education, job role, and savings behavior, the platform 
 
 ## 📐 Architecture & System Flow
 
+![Alt Text]([https://user-images.githubusercontent.com/.../image.png](https://github.com/user-attachments/assets/2d6f4d35-b778-4085-a094-a9e21020818e))
 
+Project Structure
 
+├── artifacts/                  # Model & Preprocessor artifacts
+│   ├── preprocessor.pkl        # OneHotEncoder ColumnTransformer pipeline
+│   └── salary_model.pkl        # Best trained regression model (RandomForest/Linear)
+├── kb/                         # Local Knowledge Base documents for RAG
+│   ├── financial_guidelines.txt
+│   ├── investment_categories.txt
+│   └── goal_planning_rules.txt
+├── app.py                      # Streamlit interactive UI
+├── main.py                     # FastAPI server application & endpoints
+├── train.py                    # Model training, evaluation & artifact export script
+├── tools.py                    # Financial math, inflation & feasibility business logic
+├── rag_engine.py               # Document loading, vector storage & RAG query engine
+├── city_goal_costs.csv         # Reference dataset for base goal costs per city
+├── requirements.txt            # Project dependencies
+└── README.md                   # Project documentation
 
+🧮 Financial Formulas & Business Logic
+
+### 1. Future Goal Cost Projection
+$$\text{Future Cost} = \text{Base Cost} \times (1 + r)^n$$
+*Where $r$ = Annual inflation rate by goal category (Marriage: 7%, Car: 5%, Home: 8%), $n$ = Years until goal.*
+
+### 2. Systematic Investment Plan (SIP) Calculation
+$$\text{Monthly SIP} = \frac{\text{Target Down Payment}}{\left( \frac{(1 + i)^m - 1}{i} \right) \times (1 + i)}$$
+*Where $i = \frac{\text{Annual Return}}{12}$ (assumed at 10% p.a.), $m = n \times 12$ months.*
+
+### 3. Loan Equated Monthly Installment (EMI)
+$$\text{EMI} = P \times r \times \frac{(1 + r)^n}{(1 + r)^n - 1}$$
+*Where $P$ = Loan principal (e.g., 80% of vehicle/home cost), $r$ = Monthly interest rate, $n$ = Loan tenure in months.*
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+* Python 3.9, 3.10, or 3.11 installed.
+* Virtual environment configured (`venv` or `conda`).
+
+### Installation
+
+1. **Clone the repository**:
+   ```bash
+   git clone [https://github.com/your-username/financial-dream-planner.git](https://github.com/your-username/financial-dream-planner.git)
+   cd financial-dream-planner
